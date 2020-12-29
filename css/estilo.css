@@ -1,0 +1,15 @@
+#tabela{
+    width: 60%;
+    margin: auto;
+}
+#tvalor{
+    width: 20%;
+}
+#tlocal{
+    width: 75%;
+}
+#pago{
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+}
