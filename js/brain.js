@@ -14,13 +14,14 @@ var i = -1
             criarLinhaTabela(entregas[i][0], entregas[i][1], entregas[i][2], i)
 
             qtdaPagas()
+            
         };
 
         function totalGanho(){
             var j = i
             var acumulador = 0
             while (j >= 0){
-                if(entregas[j][2].checked){
+                if(entregas[j][2].checked && entregas[j][0].value != ""){
                     acumulador+= parseInt(entregas[j][0].value)
                 }
                 j--
@@ -66,7 +67,8 @@ var i = -1
             matriz[0].setAttribute("type", "number")
             matriz[0].setAttribute("id", "valor") 
             matriz[0].setAttribute("class", "form-control")  
-            matriz[0].setAttribute("placeholder", "R$ 0,00")  
+            matriz[0].setAttribute("placeholder", "R$ 0,00") 
+            matriz[0].setAttribute("onkeyup", "totalGanho()")   
 
             matriz[1].setAttribute("type", "text")
             matriz[1].setAttribute("id", "local")
