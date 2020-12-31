@@ -61,14 +61,6 @@ var i = -1
             document.getElementById("pnpagas").innerHTML = npaga
         }
 
-        function criarCookie(valor){
-            document.cookie = "cookie=" + valor + "; "
-            return "criado"
-        }
-
-        function lerCookie(){
-            return document.cookie
-        }
         function definirMatriz(posicao){
             var matriz = new Array();
             matriz[0] = document.createElement("input")
@@ -78,8 +70,7 @@ var i = -1
             matriz[0].setAttribute("type", "number")
             matriz[0].setAttribute("id", "valor") 
             matriz[0].setAttribute("class", "form-control")  
-            matriz[0].setAttribute("placeholder", "R$ 0,00") 
-            matriz[0].setAttribute("onkeyup", "totalGanho()")   
+            matriz[0].setAttribute("placeholder", "R$ 0,00")   
 
             matriz[1].setAttribute("type", "text")
             matriz[1].setAttribute("id", "local")
