@@ -30,14 +30,17 @@ var i = -1
             document.getElementById("ptotal").innerHTML =  acumulador
         }
 
-        function trocaCor(id) {
+        function eventCheckbox(id) {
             var cor = document.getElementById(id).style.backgroundColor
-            if(cor == 'rgb(255, 106, 106)') 
-                cor = '#00FF7F';
-            else 
-                cor = 'rgb(255, 106, 106)';
-            document.getElementById(id).style.background = cor;
-
+            if(entregas[id][2].checked){
+                document.getElementById(id).style.background = '#00FF7F'
+                entregas[id][0].readOnly = true;
+                entregas[id][1].readOnly = true;
+            }else{
+                document.getElementById(id).style.background = 'rgb(255, 106, 106)'
+                entregas[id][0].readOnly = false;
+                entregas[id][1].readOnly = false;
+            }
             totalGanho()
             qtdaPagas()
         }
@@ -58,6 +61,14 @@ var i = -1
             document.getElementById("pnpagas").innerHTML = npaga
         }
 
+        function criarCookie(valor){
+            document.cookie = "cookie=" + valor + "; "
+            return "criado"
+        }
+
+        function lerCookie(){
+            return document.cookie
+        }
         function definirMatriz(posicao){
             var matriz = new Array();
             matriz[0] = document.createElement("input")
@@ -77,7 +88,7 @@ var i = -1
 
             matriz[2].setAttribute("type", "checkbox")
             matriz[2].setAttribute("id", "pago")
-            matriz[2].setAttribute("onclick", "trocaCor(" + posicao + ")")
+            matriz[2].setAttribute("onclick", "eventCheckbox(" + posicao + ")")
 
             return matriz;
         }
