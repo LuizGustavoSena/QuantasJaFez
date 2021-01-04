@@ -5,16 +5,22 @@ var i = -1
             adicionarLinha()
             totalGanho()
             qtdaPagas()
+
+            var bd = new abreConexao()
+            bd.listahistorico()
         }
 
         function adicionarLinha(){
-            i++
-            entregas[i] = definirMatriz(i)
+            if(i == -1 || entregas[i][0].value != ""){
+                i++
+                entregas[i] = definirMatriz(i)
 
-            criarLinhaTabela(entregas[i][0], entregas[i][1], entregas[i][2], i)
+                criarLinhaTabela(entregas[i][0], entregas[i][1], entregas[i][2], i)
 
-            qtdaPagas()
-            
+                qtdaPagas()
+            }else{
+                alert("Cadastre na linha já existente")
+            }
         };
 
         function totalGanho(){

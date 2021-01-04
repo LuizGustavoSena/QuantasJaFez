@@ -16,6 +16,10 @@
 p{
     font-weight: bold;
 }
+
+#form{
+    margin-top: 80px;
+}
 @media screen and (max-width: 700px){
     #tabela{
         width: 100%;
